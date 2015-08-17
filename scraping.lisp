@@ -105,13 +105,6 @@
                                     :headers headers)
                      status))))))
 
-
-(defclass humble-item (item)
-  ((original-url
-    :initarg :original-url
-    :reader original-url
-    :reader storage-id)))
-
 (defun deadp (link)
   (sget (list "dead-links" (url link)) *store*))
 
