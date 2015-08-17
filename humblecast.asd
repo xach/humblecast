@@ -1,9 +1,9 @@
 ;;;; humblecast.asd
 
 (asdf:defsystem #:humblecast
-  :description "Describe humblecast here"
-  :author "Your Name <your.name@example.com>"
-  :license "Specify license here"
+  :description "Generate and host The humble Farmer podcast"
+  :author "Zach Beane <xach@xach.com>"
+  :license "MIT"
   :depends-on (#:drakma
                #:zs3
                #:cxml
