@@ -61,7 +61,7 @@
     :initform nil)
    (items
     :reader items
-    :initform (cached-items))
+    :initform nil)
    (blocked
     :reader blocked
     :initform nil)

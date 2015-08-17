@@ -12,6 +12,7 @@
   :serial t
   :components ((:file "package")
                (:file "specials")
+               (:file "jpeg")
                (:file "utility")
                (:file "pubdate")
                (:file "duration")
@@ -21,5 +22,6 @@
                (:file "podcast")
                (:file "generate-xml")
                (:file "s3")
-               (:file "humblecast")))
+               (:file "humblecast")
+               (:file "update")))
 
