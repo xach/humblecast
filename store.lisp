@@ -347,3 +347,10 @@ starting with that prefix are considered."
     (map-stored-objects (lambda (object) (push object result))
                         class)
     result))
+
+(defun lookup (key)
+  "Like SGET, but implicitly uses *STORE*."
+  (sget key *store*))
+
+(defun (setf lookup) (new-value key)
+  (setf (sget key *store*) new-value))
