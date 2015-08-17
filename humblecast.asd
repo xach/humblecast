@@ -23,5 +23,6 @@
                (:file "generate-xml")
                (:file "s3")
                (:file "humblecast")
-               (:file "update")))
+               (:file "update")
+               (:file "interface")))
 
