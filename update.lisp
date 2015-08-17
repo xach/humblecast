@@ -74,4 +74,5 @@
     (dolist (new-link new-links)
       (process-link new-link))
     (generate-new-podcast-feed)
-    (publish-podcast-feed)))
+    (publish-podcast-feed)
+    (mapcar 'link-item new-links)))
