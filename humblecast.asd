@@ -7,6 +7,7 @@
   :depends-on (#:drakma
                #:zs3
                #:cxml
+               #:closer-mop
                #:clss)
   :serial t
   :components ((:file "package")
@@ -19,6 +20,6 @@
                (:file "protocols")
                (:file "podcast")
                (:file "generate-xml")
-               (:file "test-podcast")
+               (:file "s3")
                (:file "humblecast")))
 
