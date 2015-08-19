@@ -3,8 +3,7 @@
 (in-package #:humblecast)
 
 (defun podcast-bucket ()
-  (or (attribute-value (list "s3" "bucket") *store*)
-      (error "No key for (\"s3\" \"bucket\") in store")))
+  *podcast-bucket*)
 
 (defun last-update-time ()
   (or (sget "last-update" *store*)
@@ -58,13 +57,13 @@
 
 (defun publish-podcast-feed ()
   (let ((file (podcast-file))
-        (bucket (podcast-bucket))
+        (bucket *podcast-bucket*)
         (key "podcast.rss"))
     (unless (probe-file file)
       (error "No podcast file found at ~S" file))
     (zs3:put-file file bucket key
                   :public t
-                  :content-type "application/rss+xml")
+                  :content-type "application/rss+xml; charset=utf-8")
     (zs3:resource-url :bucket bucket
                       :key key
                       :vhost :cname)))

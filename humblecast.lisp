@@ -13,7 +13,7 @@
     :initform "http://www.thehumblefarmer.com/")
    (description
     :reader description
-    :initform "Join host Robert Skoglund, The humble Farmer, for a weekly podcast featuring old fashioned music and dry Maine humor.")
+    :initform (trim-anchor-text *description*))
    (language
     :reader language
     :initform "en-us")
@@ -49,7 +49,7 @@
     :initform "thehumblefarmer@gmail.com")
    (summary
     :reader summary
-    :initform "Join host Robert Skoglund, The humble Farmer, for a weekly podcast featuring old fashioned music and dry Maine humor.")
+    :initform (trim-anchor-text *description*))
    (subtitle
     :reader subtitle
     :initform "Maine Private Radio and No Things Considered")

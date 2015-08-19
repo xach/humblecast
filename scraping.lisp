@@ -53,12 +53,6 @@
   (list :url (url mp3-link)
         :description (description mp3-link)))
 
-(defmethod slot-unbound ((class t) link (slot-name (eql 'page)))
-  (setf (page link) (fetch (url link))))
-
-(defmethod headers ((mp3-link mp3-link))
-  (headers (page mp3-link)))
-
 (defgeneric last-modified (object)
   (:method (object)
     (let* ((headers (headers object))
@@ -67,8 +61,9 @@
         (drakma:parse-cookie-date date-string)))))
 
 (defun trim-anchor-text (text)
-  (remove-if (lambda (c) (member c '(#\Return #\Newline)))
-             (string-trim *trimmed-whitespace* text)))
+  (substitute-if #\Space
+                 (lambda (c) (member c '(#\Return #\Newline)))
+                 (string-trim *trimmed-whitespace* text)))
 
 (defun merge-urls (url base)
   (puri:render-uri (puri:merge-uris url base) nil))
