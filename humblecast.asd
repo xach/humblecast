@@ -21,7 +21,6 @@
                (:file "scraping")
                (:file "podcast")
                (:file "generate-xml")
-               (:file "s3")
                (:file "humblecast")
                (:file "update")
                (:file "interface")))
