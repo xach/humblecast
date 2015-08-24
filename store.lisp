@@ -272,7 +272,7 @@ starting with that prefix are considered."
     (loop for (key . value) in (url-properties url store)
           do (sdelete key store))))
 
-(defvar *max-cache-age* 86400)
+(defvar *max-cache-age* 600)
 
 (defun cachedp (url store)
   (let* ((body-file (probe-file (url-body-file url store)))
