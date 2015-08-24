@@ -150,6 +150,7 @@
                                      :enclosure-url s3-link
                                      :guid (url link))))
             (store item)
+            (store link)
             (mark-processed link)))
       (unexpected-http-status ()
         (mark-dead link)
